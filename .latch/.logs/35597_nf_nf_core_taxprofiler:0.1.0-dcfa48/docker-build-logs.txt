@@ -1,0 +1,109 @@
+Step 1/15 : from 812206152185.dkr.ecr.us-west-2.amazonaws.com/latch-base:fe0b-main
+
+
+ ---> f23c37efcd53
+
+Step 2/15 : workdir /tmp/docker-build/work/
+
+
+ ---> Using cache
+
+ ---> dd16c2d4f334
+
+Step 3/15 : shell [     "/usr/bin/env", "bash",     "-o", "errexit",     "-o", "pipefail",     "-o", "nounset",     "-o", "verbose",     "-o", "errtrace",     "-O", "inherit_errexit",     "-O", "shift_verbose",     "-c" ]
+
+
+ ---> Using cache
+
+ ---> aaada0c60239
+
+Step 4/15 : env TZ='Etc/UTC'
+
+
+ ---> Using cache
+
+ ---> d6869bc03deb
+
+Step 5/15 : env LANG='en_US.UTF-8'
+
+
+ ---> Using cache
+
+ ---> ae2f7ca65880
+
+Step 6/15 : arg DEBIAN_FRONTEND=noninteractive
+
+
+ ---> Using cache
+
+ ---> f029b3f36a86
+
+Step 7/15 : run pip install latch==2.46.6
+
+
+ ---> Using cache
+
+ ---> be1350f11537
+
+Step 8/15 : run mkdir /opt/latch
+
+
+ ---> Using cache
+
+ ---> e8dd4419614b
+
+Step 9/15 : run apt-get update && apt-get install -y default-jre-headless
+
+
+ ---> Using cache
+
+ ---> 447cbd90cbc9
+
+Step 10/15 : copy . /root/
+
+
+ ---> 1072cdfbfdd0
+
+Step 11/15 : run ln -s /root/.latch/bin/nextflow /root/nextflow
+
+
+ ---> Running in beb474004e39
+
+[91mln -s /root/.latch/bin/nextflow /root/nextflow
+[0m
+ ---> 2961ceb681f4
+
+Step 12/15 : run ln -s /root/.latch/.nextflow /root/.nextflow
+
+
+ ---> Running in e358fea109f9
+
+[91mln -s /root/.latch/.nextflow /root/.nextflow
+[0m
+ ---> 31ea98f6f86d
+
+Step 13/15 : arg tag
+
+
+ ---> Running in 04378a37dcba
+
+ ---> bb77c032010b
+
+Step 14/15 : env FLYTE_INTERNAL_IMAGE $tag
+
+
+ ---> Running in 1d2e6133062b
+
+ ---> 81b1b741909b
+
+Step 15/15 : workdir /root
+
+
+ ---> Running in d666533b0300
+
+ ---> ae7f93aaed8e
+
+Successfully built ae7f93aaed8e
+
+Successfully tagged 812206152185.dkr.ecr.us-west-2.amazonaws.com/35597_nf_nf_core_taxprofiler:0.1.0-dcfa48
+
